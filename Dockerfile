@@ -5,8 +5,9 @@
 	RUN apk update && apk add bash
 
 	# Copy the fat jar into the container at /app
-	COPY employee-project-service/build/docker /app/employee-proj-service/
 	COPY employee-service/target/employee-service.jar /app/emp-service/
+	COPY address-service/target/address-service.jar /app/address-service/
+	COPY project-service/target/project-service.jar /app/project-service/
 	COPY single-container/start.sh /app/start.sh
 	
 	EXPOSE 8080 34004
